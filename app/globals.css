@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html { scroll-behavior: smooth; }
+body { background: #FBF8EC; color: #111; overflow-x: hidden; cursor: none; }
+@media (hover: none) { body { cursor: auto; } .cur { display: none; } }
+a, button { cursor: none; }
+.noise { background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size: 4px 4px; }
+::selection { background: #D6DE23; }
+/* Video player sizing: the video box fills the space left between the top bar and the bottom controls. */
+.vp { --reserve: 9.5rem; }
+@media (min-width: 768px) { .vp { --reserve: 7rem; } }
+.vp-portrait { aspect-ratio: 9 / 16; width: min(100%, calc((100vh - var(--reserve)) * 9 / 16)); width: min(100%, calc((100dvh - var(--reserve)) * 9 / 16)); }
+.vp-landscape { aspect-ratio: 16 / 9; width: min(100%, 1100px, calc((100vh - var(--reserve)) * 16 / 9)); width: min(100%, 1100px, calc((100dvh - var(--reserve)) * 16 / 9)); }
